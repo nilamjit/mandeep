@@ -1,0 +1,369 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+color:#fff;
+overflow-x:hidden;
+background:linear-gradient(#7b7dff,#ff9d7d,#ffd978,#5ea94f);
+}
+
+/* BACKGROUND */
+
+.sky{
+position:fixed;
+inset:0;
+background:
+linear-gradient(to bottom,#7478ff 0%,#ff9878 45%,#ffd976 75%,#69b858 100%);
+z-index:-10;
+}
+
+.sun{
+position:fixed;
+width:220px;
+height:220px;
+border-radius:50%;
+top:10%;
+right:10%;
+background:#ffe26b;
+box-shadow:
+0 0 80px #ffd54f,
+0 0 180px rgba(255,213,79,.4);
+animation:sun 6s ease-in-out infinite;
+z-index:-9;
+}
+
+@keyframes sun{
+
+50%{
+transform:translateY(-12px);
+}
+
+}
+
+/* STARS */
+
+.stars{
+
+position:fixed;
+inset:0;
+background-image:
+radial-gradient(white 1px,transparent 1px);
+
+background-size:70px 70px;
+
+opacity:0;
+
+animation:night 18s linear infinite;
+
+z-index:-8;
+
+}
+
+@keyframes night{
+
+70%{
+
+opacity:0;
+
+}
+
+100%{
+
+opacity:.7;
+
+}
+
+}
+
+/* FIREFLIES */
+
+.fireflies{
+
+position:fixed;
+inset:0;
+pointer-events:none;
+
+}
+
+.fireflies span{
+
+position:absolute;
+
+width:6px;
+height:6px;
+
+background:#fff6a8;
+
+border-radius:50%;
+
+box-shadow:0 0 12px #fff6a8;
+
+animation:fly 10s linear infinite;
+
+}
+
+.fireflies span:nth-child(1){left:10%;top:70%;animation-delay:1s;}
+.fireflies span:nth-child(2){left:20%;top:85%;animation-delay:3s;}
+.fireflies span:nth-child(3){left:35%;top:60%;animation-delay:6s;}
+.fireflies span:nth-child(4){left:50%;top:80%;animation-delay:2s;}
+.fireflies span:nth-child(5){left:65%;top:72%;animation-delay:5s;}
+.fireflies span:nth-child(6){left:80%;top:85%;animation-delay:7s;}
+.fireflies span:nth-child(7){left:90%;top:70%;animation-delay:4s;}
+.fireflies span:nth-child(8){left:42%;top:88%;animation-delay:8s;}
+.fireflies span:nth-child(9){left:74%;top:66%;animation-delay:2s;}
+.fireflies span:nth-child(10){left:58%;top:74%;animation-delay:6s;}
+
+@keyframes fly{
+
+50%{
+transform:translateY(-30px) translateX(20px);
+}
+
+}
+
+/* GRASS */
+
+.grass{
+
+position:fixed;
+
+bottom:0;
+
+width:100%;
+
+height:22vh;
+
+background:
+linear-gradient(#68c65d,#357c36);
+
+border-radius:60% 60% 0 0;
+
+z-index:-7;
+
+}
+
+/* HERO */
+
+.hero,
+.scene,
+.ending{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:40px;
+
+}
+
+.small{
+
+letter-spacing:5px;
+
+text-transform:uppercase;
+
+opacity:.8;
+
+margin-bottom:20px;
+
+}
+
+.hero h1{
+
+font-size:7rem;
+
+font-family:'Cormorant Garamond',serif;
+
+font-weight:700;
+
+}
+
+.hero h2{
+
+max-width:700px;
+
+font-size:2rem;
+
+font-weight:300;
+
+line-height:1.5;
+
+margin:25px 0;
+
+}
+
+.scroll{
+
+text-decoration:none;
+
+color:white;
+
+padding:15px 35px;
+
+border:1px solid rgba(255,255,255,.35);
+
+border-radius:40px;
+
+backdrop-filter:blur(10px);
+
+transition:.3s;
+
+}
+
+.scroll:hover{
+
+background:rgba(255,255,255,.15);
+
+transform:translateY(-4px);
+
+}
+
+/* SCENES */
+
+.number{
+
+font-size:14px;
+
+letter-spacing:6px;
+
+opacity:.6;
+
+margin-bottom:20px;
+
+}
+
+.scene h2{
+
+font-size:3.4rem;
+
+font-family:'Cormorant Garamond',serif;
+
+margin-bottom:25px;
+
+}
+
+.text{
+
+max-width:650px;
+
+font-size:1.4rem;
+
+line-height:2;
+
+opacity:.92;
+
+}
+
+/* END */
+
+.ending h3{
+
+font-size:2rem;
+
+font-weight:300;
+
+}
+
+.ending h1{
+
+font-size:5rem;
+
+font-family:'Cormorant Garamond',serif;
+
+margin:15px 0;
+
+}
+
+.ending p{
+
+font-size:1.2rem;
+
+line-height:2;
+
+margin-bottom:40px;
+
+}
+
+#loveBtn{
+
+padding:18px 45px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+font-size:18px;
+
+color:white;
+
+background:linear-gradient(45deg,#ff6b81,#ff9a5a);
+
+box-shadow:0 12px 35px rgba(255,107,129,.35);
+
+transition:.35s;
+
+}
+
+#loveBtn:hover{
+
+transform:scale(1.06);
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:4.5rem;
+
+}
+
+.hero h2{
+
+font-size:1.4rem;
+
+}
+
+.scene h2{
+
+font-size:2.3rem;
+
+}
+
+.text{
+
+font-size:1.1rem;
+
+}
+
+.ending h1{
+
+font-size:3.3rem;
+
+}
+
+.sun{
+
+width:140px;
+height:140px;
+
+}
+
+}
